@@ -20,7 +20,7 @@ def pad(img, x, y):
     result.paste(img, (x, y))
     return result
 
-def GenerageImage():
+def GenerateImage():
   sc = smartcrop.SmartCrop()
 
   masks = list(os.scandir("./masks"))
@@ -60,7 +60,7 @@ def GenerageImage():
 
   api.UpdateBanner(filename)
 
-schedule.every().sunday.at("00:00").do(GenerageImage)
+schedule.every().sunday.at("00:00").do(GenerateImage)
 
 while True:
     schedule.run_pending()
